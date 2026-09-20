@@ -1,0 +1,14 @@
+{
+  "name": "fulltext-search-engine",
+  "version": "1.0.0",
+  "description": "全文搜索引擎（fulltext-search-engine）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
