@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>索引管理后台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🛠 索引管理后台</h1>
+    <nav><a href="/">← 检索工作台</a></nav>
+  </header>
+
+  <main class="container">
+    <section id="statCards" class="stat-cards"></section>
+
+    <section class="panel">
+      <h2>热门词项 TOP 15</h2>
+      <table id="topTerms"><thead><tr><th>词项</th><th>文档频率 DF</th><th>总词频 TF</th></tr></thead><tbody></tbody></table>
+    </section>
+
+    <section class="panel">
+      <h2>录入文档</h2>
+      <div class="form-grid">
+        <input id="dTitle" type="text" placeholder="标题">
+        <input id="dType" type="text" placeholder="类型（如 article / note / tutorial）" value="article">
+        <input id="dSource" type="text" placeholder="来源（如 tech-blog）">
+        <input id="dDate" type="datetime-local">
+      </div>
+      <textarea id="dContent" rows="4" placeholder="正文内容"></textarea>
+      <button id="addDoc">提交并索引</button>
+      <span id="addMsg" class="msg"></span>
+    </section>
+
+    <section class="panel">
+      <h2>批量导入（JSON 数组）</h2>
+      <textarea id="bulkJson" rows="5" placeholder='[{"title":"...","content":"...","doc_type":"article","source":"..."}]'></textarea>
+      <button id="bulkBtn">批量导入</button>
+      <span id="bulkMsg" class="msg"></span>
+    </section>
+
+    <section class="panel">
+      <h2>索引维护</h2>
+      <button id="rebuildBtn" class="warn">全量重建索引</button>
+      <button id="clearBtn" class="danger">清空全部数据</button>
+      <span id="maintMsg" class="msg"></span>
+    </section>
+
+    <section class="panel">
+      <h2>文档列表</h2>
+      <table id="docTable">
+        <thead><tr><th>ID</th><th>标题</th><th>类型</th><th>来源</th><th>长度</th><th>创建时间</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div id="docPager" class="pager"></div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

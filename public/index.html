@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全文检索工作台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🔍 全文检索工作台</h1>
+    <nav><a href="/admin">索引管理后台 →</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="search-panel">
+      <div class="search-box">
+        <input id="q" type="text" placeholder='试试：全文检索、title:索引、"短语匹配"、引擎 OR 缓存、检索 -倒排'
+               autocomplete="off" autofocus>
+        <button id="searchBtn">检索</button>
+      </div>
+      <div class="filters">
+        <label>文档类型
+          <select id="fType"><option value="">全部</option></select>
+        </label>
+        <label>起始日期 <input id="fFrom" type="date"></label>
+        <label>截止日期 <input id="fTo" type="date"></label>
+        <label>来源 <input id="fSource" type="text" placeholder="如 tech-blog"></label>
+        <label>每页
+          <select id="fPageSize">
+            <option>10</option><option>20</option><option>50</option>
+          </select>
+        </label>
+        <label class="chk"><input id="fExplain" type="checkbox"> 评分明细</label>
+      </div>
+      <div class="syntax-help">
+        语法：AND / OR / NOT（或 <code>-</code>）· <code>"短语"</code> · <code>title:词</code> / <code>content:词</code> · <code>( )</code> 分组
+      </div>
+    </section>
+
+    <section id="meta" class="meta-bar"></section>
+    <section id="dist" class="dist-bar"></section>
+    <section id="results"></section>
+    <section id="pager" class="pager"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

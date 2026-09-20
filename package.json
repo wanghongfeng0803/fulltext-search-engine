@@ -1,14 +1,28 @@
 {
   "name": "fulltext-search-engine",
   "version": "1.0.0",
-  "description": "全文搜索引擎（fulltext-search-engine）",
+  "description": "基于 Node.js + Express + SQLite 的独立可部署全文检索中间件",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "seed": "node scripts/seed.js",
+    "test": "node scripts/test-api.js"
   },
-  "keywords": [],
+  "keywords": [
+    "fulltext-search",
+    "inverted-index",
+    "tf-idf",
+    "sqlite",
+    "express"
+  ],
   "author": "",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "express": "^4.22.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
