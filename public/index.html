@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全文检索工作台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>全文检索工作台</h1>
+    <nav><a href="/admin.html">索引管理</a></nav>
+  </header>
+
+  <main>
+    <section class="search-panel">
+      <div class="search-row">
+        <input id="q" type="text" placeholder='试试：全文检索、"搜索引擎"、title:索引、搜索 OR 检索、NOT 广告' autofocus>
+        <button id="searchBtn">搜索</button>
+      </div>
+      <div class="filters">
+        <label>类型
+          <select id="typeFilter"><option value="">全部</option></select>
+        </label>
+        <label>起始日期 <input id="fromFilter" type="date"></label>
+        <label>截止日期 <input id="toFilter" type="date"></label>
+        <label>每页
+          <select id="pageSize">
+            <option>10</option><option>20</option><option>50</option>
+          </select>
+        </label>
+      </div>
+      <p class="hint">支持语法：AND / OR / NOT（或 -）、英文双引号短语、title: 字段限定、括号分组</p>
+    </section>
+
+    <section id="meta" class="meta"></section>
+    <section id="facets" class="facets"></section>
+    <section id="results"></section>
+    <section id="pagination" class="pagination"></section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

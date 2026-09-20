@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>索引管理后台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>索引管理后台</h1>
+    <nav><a href="/index.html">检索工作台</a></nav>
+  </header>
+
+  <main>
+    <section id="stats" class="stats"></section>
+
+    <section class="panel">
+      <h2>新增文档</h2>
+      <form id="addForm">
+        <input name="title" placeholder="标题" required>
+        <div class="form-row">
+          <input name="type" placeholder="类型（如 article / note / report）" value="article">
+          <input name="author" placeholder="作者">
+          <input name="tags" placeholder="标签（逗号分隔）">
+        </div>
+        <textarea name="content" rows="5" placeholder="正文内容" required></textarea>
+        <button type="submit">提交并索引</button>
+        <span id="addMsg" class="msg"></span>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>索引维护</h2>
+      <button id="reindexBtn">全量重建索引</button>
+      <span id="reindexMsg" class="msg"></span>
+    </section>
+
+    <section class="panel">
+      <h2>文档列表</h2>
+      <table id="docTable">
+        <thead>
+          <tr><th>ID</th><th>标题</th><th>类型</th><th>作者</th><th>词数</th><th>创建时间</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="docPager" class="pagination"></div>
+    </section>
+  </main>
+
+  <script src="/admin.js"></script>
+</body>
+</html>
